@@ -1,0 +1,1 @@
+select*from {{source("walmart_database", "customers")}}

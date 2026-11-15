@@ -1,0 +1,8 @@
+{
+  "python.defaultInterpreterPath": "C:\\anaconda\\python.exe",
+  "dbt.dbtPythonPathOverride": "C:\\anaconda\\python.exe",
+  "dbt.allowListFolders": [
+    "walmart_project"
+  ]
+}
+
