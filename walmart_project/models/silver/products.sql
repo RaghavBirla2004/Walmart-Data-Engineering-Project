@@ -1,7 +1,8 @@
 {{
     config(
         materialized='incremental',
-        unique_key='product_id'
+        unique_key='product_id',
+        schema='silver'
     )
 }}
 
