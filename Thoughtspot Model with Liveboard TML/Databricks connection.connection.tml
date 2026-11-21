@@ -1,0 +1,16 @@
+guid: ce5491eb-49dd-49a7-afea-cddc248d3bd3
+obj_id: Databricksconnection-ce5491eb
+connection:
+  name: Databricks connection
+  type: RDBMS_DATABRICKS
+  authentication_type: PERSONAL_ACCESS_TOKEN
+  properties:
+  - key: host
+    value: dbc-1dd06919-7f7c.cloud.databricks.com
+  - key: http_path
+    value: /sql/1.0/warehouses/7655c917bce2dd62
+  - key: personal_access_token
+    value: ""
+  description: ""
+  selected_databases:
+  - walmart

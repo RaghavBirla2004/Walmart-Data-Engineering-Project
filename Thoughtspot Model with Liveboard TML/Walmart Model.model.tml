@@ -1,0 +1,211 @@
+guid: a121dfd5-1d22-4d39-98e8-8a849558a523
+obj_id: WalmartModel-a121dfd5
+model:
+  name: Walmart Model
+  model_tables:
+  - name: orders
+    fqn: 81f64815-6bc5-434b-b0f4-8678dc563e47
+    joins:
+    - with: order_item
+      'on': '[orders::order_id] = [order_item::order_id]'
+      type: LEFT_OUTER
+      cardinality: ONE_TO_MANY
+    obj_id: orders-81f64815
+  - name: customers
+    fqn: 950ea759-41d1-456b-9084-2d3eb2a7e284
+    joins:
+    - with: orders
+      'on': '[customers::customer_id] = [orders::order_id]'
+      type: LEFT_OUTER
+      cardinality: ONE_TO_MANY
+    obj_id: customers-950ea759
+  - name: order_item
+    fqn: 6ea06462-9703-492e-b50d-bfed02228515
+    joins:
+    - with: products
+      'on': '[order_item::product_id] = [products::product_id]'
+      type: LEFT_OUTER
+      cardinality: ONE_TO_MANY
+    obj_id: order_item-6ea06462
+  - name: products
+    fqn: 8db54891-5e9c-4729-8cfa-06ade73811d8
+    obj_id: products-8db54891
+  - name: stores
+    fqn: 640974a5-7433-42ed-b01a-3b7a75ca6e25
+    joins:
+    - with: employees
+      'on': '[stores::store_id] = [employees::store_id]'
+      type: LEFT_OUTER
+      cardinality: ONE_TO_MANY
+    - with: orders
+      'on': '[stores::store_id] = [orders::store_id]'
+      type: LEFT_OUTER
+      cardinality: ONE_TO_MANY
+    obj_id: stores-640974a5
+  - name: employees
+    fqn: 4bf82aee-94d8-4dc7-92f4-79ed6e0f1eaf
+    obj_id: employees-4bf82aee
+  columns:
+  - name: Customer City
+    column_id: customers::city
+    properties:
+      column_type: ATTRIBUTE
+  - name: Customer Country
+    column_id: customers::country
+    properties:
+      column_type: ATTRIBUTE
+  - name: Customer Id
+    column_id: customers::customer_id
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Customer Email
+    column_id: customers::email
+    properties:
+      column_type: ATTRIBUTE
+  - name: Customer First Name
+    column_id: customers::first_name
+    properties:
+      column_type: ATTRIBUTE
+  - name: Customer isActive
+    column_id: customers::is_active
+    properties:
+      column_type: ATTRIBUTE
+  - name: Customer Last Name
+    column_id: customers::last_name
+    properties:
+      column_type: ATTRIBUTE
+  - name: 'Customers Phone '
+    column_id: customers::phone
+    properties:
+      column_type: ATTRIBUTE
+  - name: Customers Province
+    column_id: customers::province
+    properties:
+      column_type: ATTRIBUTE
+  - name: Employees Created At
+    column_id: employees::created_timestamp
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: Employee Email
+    column_id: employees::email
+    properties:
+      column_type: ATTRIBUTE
+  - name: Employee Id
+    column_id: employees::employee_id
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Employee First Name
+    column_id: employees::first_name
+    properties:
+      column_type: ATTRIBUTE
+  - name: Employee Is Active
+    column_id: employees::is_active
+    properties:
+      column_type: ATTRIBUTE
+  - name: Employee Job Title
+    column_id: employees::job_title
+    properties:
+      column_type: ATTRIBUTE
+  - name: Employee Last Name
+    column_id: employees::last_name
+    properties:
+      column_type: ATTRIBUTE
+  - name: Employee Salary
+    column_id: employees::salary
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Line Amount
+    column_id: order_item::line_amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Quantity
+    column_id: order_item::quantity
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Unit Price
+    column_id: order_item::unit_price
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Order Id
+    column_id: orders::order_id
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Order Status
+    column_id: orders::order_status
+    properties:
+      column_type: ATTRIBUTE
+  - name: Payment Method
+    column_id: orders::payment_method
+    properties:
+      column_type: ATTRIBUTE
+  - name: Order Timestamp
+    column_id: orders::order_timestamp
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: Total Amount
+    column_id: orders::total_amount
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Brand
+    column_id: products::brand
+    properties:
+      column_type: ATTRIBUTE
+  - name: Category
+    column_id: products::category
+    properties:
+      column_type: ATTRIBUTE
+  - name: Price
+    column_id: products::price
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: Product Name
+    column_id: products::product_name
+    properties:
+      column_type: ATTRIBUTE
+  - name: Product Created Date
+    column_id: products::created_timestamp
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: Store City
+    column_id: stores::city
+    properties:
+      column_type: ATTRIBUTE
+  - name: Store Country
+    column_id: stores::country
+    properties:
+      column_type: ATTRIBUTE
+  - name: Store Created Date
+    column_id: stores::created_timestamp
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: Store Name
+    column_id: stores::store_name
+    properties:
+      column_type: ATTRIBUTE
+  properties:
+    is_bypass_rls: false
+    join_progressive: true
+    spotter_config:
+      is_spotter_enabled: true
