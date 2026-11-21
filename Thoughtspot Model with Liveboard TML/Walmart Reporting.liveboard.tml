@@ -1,5 +1,5 @@
 guid: d8f9a98d-b4c8-4694-bf1a-c4e89f365f20
-obj_id: WalmartReporting-d8f9a98d
+obj_id: WalmartReporting-d8f9a98d  #To update this field, select change objectid option under Edit
 liveboard:
   name: Walmart Reporting
   visualizations:
@@ -9,7 +9,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "sum [Total Amount] [Category]"
       answer_columns:
@@ -27,12 +26,12 @@ liveboard:
         client_state: ""
         client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"Category\",\"columnProperty\": {}},{\"columnId\": \"Total Total Amount\",\"columnProperty\": {}}]}"
       chart:
-        type: ADVANCED_COLUMN
+        type: ADVANCED_DONUT
         chart_columns:
         - column_id: Category
         - column_id: Total Total Amount
         client_state: ""
-        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"columnProperties\": [{\"columnId\": \"Category\",\"columnProperty\": {}},{\"columnId\": \"Total Total Amount\",\"columnProperty\": {}},{\"columnId\": \"Measure names\",\"columnProperty\": {}},{\"columnId\": \"Measure values\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"91c3d851-5701-4d53-af24-b8d9fa5c3358\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Total Amount\"],\"isOpposite\": false}},{\"id\": \"11de482c-7afe-4686-8d54-3d567b25042b\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Category\"]}}]}"
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"},\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true,\"showAnalyseChangeCta\": true}},\"columnProperties\": [{\"columnId\": \"Category\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total Total Amount\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Measure names\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Measure values\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"91c3d851-5701-4d53-af24-b8d9fa5c3358\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Total Amount\"],\"isOpposite\": false}},{\"id\": \"11de482c-7afe-4686-8d54-3d567b25042b\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Category\"]}}]}"
         custom_chart_config:
         - key: basic
           dimensions:
@@ -46,10 +45,6 @@ liveboard:
             - type: FLAT
               column: Total Total Amount
             mode: AXIS_DRIVEN
-          - key: slice-with-color
-            mode: AXIS_DRIVEN
-          - key: trellis-by
-            mode: AXIS_DRIVEN
         custom_visual_props: "{\"clientState\":\"\",\"axisVisualProps\":{\"Category\":{\"name-color\":{\"color\":\"#5f5f5f\",\"style\":[]},\"label-color\":{\"color\":\"#858585\",\"style\":[]},\"show-x-axis-gridlines\":false},\"Total Total Amount\":{\"sync-axis-domains\":false,\"log-scale\":false,\"inheritAxisNameStyle\":{\"textStyle\":{\"color\":\"#5f5f5f\",\"style\":[]},\"isLinked\":true},\"inheritNF\":{\"format\":{\"category\":\"CURRENCY\",\"currencyFormatConfig\":{\"decimals\":1,\"locale\":\"USD\",\"removeTrailingZeroes\":false,\"toSeparateThousands\":true,\"unit\":\"AUTO\"},\"isCategoryEditable\":true},\"isLinked\":false},\"inheritValueLabelStyle\":{\"textStyle\":{\"color\":\"#858585\",\"style\":[]},\"isLinked\":true},\"show-y-axis-gridlines\":true,\"y-axis-gridline-style\":{\"dashStyle\":\"Solid\",\"thickness\":1,\"color\":\"#EAEDF2\"}}},\"columnVisualProps\":{\"Total Total Amount\":{\"bar-size-auto\":true,\"bar-color\":\"#06BF7F\",\"gradient-legend-enabled\":false},\"Category\":{\"column-sort\":{\"column-sort-type\":\"Alphanumeric\"}}},\"displayVisualProps\":{\"display\":{\"fit-to-screen\":false},\"axis-display\":{\"x-axis-display\":{\"show-axis\":true,\"show-axis-name\":true,\"show-axis-intervals\":false},\"y-axis-display\":{\"show-axis\":true,\"show-axis-name\":true,\"show-axis-intervals\":false}},\"totals-summary\":{\"show-row-grand-totals\":false,\"show-column-grand-totals\":false,\"show-row-sub-totals\":false,\"show-column-sub-totals\":false,\"totals-position\":\"End\",\"gradient-legend-include-summaries\":false},\"trellis\":{\"trellis-shared-axis\":false,\"trellis-subplot-color\":false,\"trellis-title-show\":false,\"trellis-title-color\":\"#000000\",\"trellis-border-show\":false,\"trellis-border-color\":\"#000000\"},\"other\":{\"chart-background-color\":{\"backgroundColor\":\"#ffffff\",\"borderColor\":\"#ffffff\"},\"plotted-area-background-color\":{\"backgroundColor\":\"#ffffff\",\"borderColor\":\"#ffffff\"}},\"regression-lines\":{\"show-regression-lines\":false}},\"dataLabelVisualProps\":{\"cartesian-data-labels\":{\"show-labels\":true},\"Total Total Amount\":{\"cartesian-data-labels\":{\"cartesian-data-labels-enable\":true,\"cartesian-data-labels-alignment\":\"Outside\",\"data-label-font\":{\"color\":\"#000000\",\"style\":[]}}}},\"legendVisualProps\":{\"legend\":{\"show-legend\":true,\"legend-position\":\"Top\"}},\"tooltipVisualProps\":{\"global-tooltip\":{\"show-tooltip\":true,\"tooltip-show-details\":false,\"tooltip-show-aggregates\":false,\"tooltipBackground\":{\"backgroundColor\":\"#1d232f\",\"borderColor\":\"#1d232f\",\"backgroundOpacity\":\"100\"},\"tooltip-column-name\":{\"size\":\"12\",\"color\":\"#ffffff\",\"style\":[]},\"tooltip-column-value\":{\"size\":\"12\",\"color\":\"#ffffff\",\"style\":[]}}},\"chartSettingsVersion\":\"1\",\"muzeAiState\":{\"spec\":{\"rows\":[{\"type\":\"single\",\"fields\":[\"Total Total Amount\"]}],\"columns\":[{\"type\":\"single\",\"fields\":[\"Category\"]}],\"layers\":[{\"mark\":\"bar\",\"encoding\":{\"x\":{\"field\":\"Category\"},\"y\":{\"field\":\"Total Total Amount\"},\"color\":{\"value\":\"#004b9b\"},\"text\":{\"field\":\"Total Total Amount\",\"placement\":{\"anchors\":[\"outside-top\"]}}},\"config\":{\"cornerRadius\":4}}],\"explanation\":\"Compare total sales revenue across product categories\",\"sort\":{\"axes\":{\"x\":{\"Category\":{\"type\":\"field\",\"direction\":\"desc\",\"field\":{\"name\":\"Total Total Amount\",\"aggregation\":\"sum\"}}}}},\"formatting\":{\"fields\":{\"Total Total Amount\":{\"type\":\"number\",\"style\":\"currency\",\"currency\":\"USD\",\"unit\":\"auto\",\"decimalDigits\":1}}}},\"nlQuery\":\"Total sales revenue (Total Amount) by Product Category\",\"enriched\":true}}"
         viz_style: "{}"
       display_mode: CHART_MODE
@@ -61,7 +56,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "sum [Total Amount] [Store Name]"
       answer_columns:
@@ -110,7 +104,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "sum [Order Id] [Payment Method]"
       answer_columns:
@@ -159,7 +152,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "sum [Total Amount] [Order Timestamp].monthly"
       answer_columns:
@@ -208,7 +200,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "sum [Total Amount] [Order Status]"
       answer_columns:
@@ -257,7 +248,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "[Total Amount]"
       answer_columns:
@@ -286,7 +276,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "[Customer Id]"
       answer_columns:
@@ -324,7 +313,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "count [Store Name]"
       answer_columns:
@@ -362,7 +350,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       search_query: "[Employee Id]"
       answer_columns:
@@ -400,7 +387,6 @@ liveboard:
       tables:
       - id: Walmart Model
         name: Walmart Model
-        fqn: a121dfd5-1d22-4d39-98e8-8a849558a523
         obj_id: WalmartModel-a121dfd5
       formulas:
       - id: formula_Store City and Country
@@ -448,7 +434,7 @@ liveboard:
       x: 6
       "y": 2
       height: 5
-      width: 5
+      width: 6
     - visualization_id: Viz_2
       x: 6
       "y": 7
