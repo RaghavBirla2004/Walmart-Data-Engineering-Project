@@ -1,0 +1,14 @@
+models:
+  - name: orders_bronze
+    columns: 
+       - name: order_id
+         data_tests:
+          - not_null
+          - unique
+   
+      
+
+
+
+
+

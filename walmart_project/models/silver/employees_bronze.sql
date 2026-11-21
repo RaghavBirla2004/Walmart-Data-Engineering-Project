@@ -28,3 +28,8 @@ WHERE updated_timestamp > (SELECT coalesce(MAX(updated_timestamp), '1900-01-01')
 
 {% endif %}
 
+QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY employee_id
+    ORDER BY updated_timestamp DESC
+) = 1
+

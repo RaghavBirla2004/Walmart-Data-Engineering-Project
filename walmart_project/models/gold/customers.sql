@@ -1,0 +1,21 @@
+{{
+    config(
+        materialized='table',
+        schema='gold'
+    )
+}}
+select
+customer_id,
+first_name,
+last_name,
+email,
+phone,
+city,
+province,
+country,
+created_timestamp,
+updated_timestamp,
+is_active
+from 
+
+{{ref('customers_bronze')}}

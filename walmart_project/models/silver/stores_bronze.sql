@@ -1,7 +1,7 @@
 {{
     config(
         materialized='incremental',
-        unique_key='product_id',
+        unique_key='store_id',
         schema='silver'
     )
 }}
@@ -9,20 +9,25 @@
 
 
 select
-product_id,
-product_name,
-category,
-brand,
-price,
+store_id,
+store_name,
+city,
+province,
+country,
 created_timestamp,
 updated_timestamp,
 is_active
 from 
-{{source("walmart_database", "products")}}
+{{source("walmart_database", "stores")}}
 
 {% if is_incremental() %}
 
 WHERE updated_timestamp > (SELECT coalesce(MAX(updated_timestamp), '1900-01-01') FROM {{ this }})
 
 {% endif %}
+
+QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY store_id
+    ORDER BY updated_timestamp DESC
+) = 1
 

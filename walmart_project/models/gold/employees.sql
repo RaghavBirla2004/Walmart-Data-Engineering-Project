@@ -1,0 +1,19 @@
+{{
+    config(
+        materialized='table',
+        schema='gold'
+    )
+}}
+select
+employee_id,
+store_id,
+first_name,
+last_name,
+email,
+job_title,
+salary,
+created_timestamp,
+updated_timestamp,
+is_active
+from 
+{{source("walmart_database", "employees")}}
